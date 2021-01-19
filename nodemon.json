@@ -1,0 +1,6 @@
+{
+    "env": {
+        "MONGO_ATLAS_PW": "admin12345678",
+        "DB_NAME": "my-todo"
+    }
+}
