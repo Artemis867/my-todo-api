@@ -3,7 +3,6 @@ const app = express();
 const taskRoutes = require('./api/routes/tasks');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
-const port = process.env.port || 3000;
 
 mongoose.connect("mongodb://administrator:"+process.env.MONGO_ATLAS_PW+"@node-rest-shop-shard-00-00.ozelk.mongodb.net:27017,node-rest-shop-shard-00-01.ozelk.mongodb.net:27017,node-rest-shop-shard-00-02.ozelk.mongodb.net:27017/"+process.env.DB_NAME+"?ssl=true&replicaSet=node-rest-shop-shard-0&authSource=admin&retryWrites=true&w=majority",
 { useUnifiedTopology: true, useNewUrlParser: true });
@@ -44,6 +43,4 @@ app.use((error, req, res, next) => {
     }
 });
 
-app.listen(port, () => {
-    console.log('test');
-});
+module.exports = app;
